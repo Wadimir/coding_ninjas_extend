@@ -1,0 +1,16 @@
+#footerDone {
+display:none;
+}
+
+#taskDone {
+margin-bottom: 0;
+display:none;
+}
+
+.hidden {
+display:none;
+}
+
+#freelancerField {
+margin-bottom:0;
+}
