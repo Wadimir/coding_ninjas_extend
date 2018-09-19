@@ -70,6 +70,12 @@ class CodingNinjasComponent {
         wp_enqueue_script('data-tables', plugins_url('datatables.js', __file__ ), ['jquery']);
 		wp_enqueue_style('cnext-frontend',  plugins_url('../styles/frnd.css', __file__));
 		wp_enqueue_script('cnext-frontend', plugins_url('frnd.js', __file__ ), ['jquery']);
+		
+		?>
+		<script type="text/javascript">
+			var ajaxurl = "<?php echo admin_url('admin-ajax.php'); ?>";
+		</script>
+		<?php
     }
 	
 	function cn_dashboard($atts, $content) {
@@ -147,7 +153,7 @@ class CodingNinjasComponent {
         if (!is_wp_error($post_id)) {
             update_post_meta($post_id, 'freelancer_id', $_POST['task_freelancer']);
             $this->update_freelancer($_POST['task_freelancer']);
-        }		
+        }	
     }
 
     function cn_menu($menu) {

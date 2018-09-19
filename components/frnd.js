@@ -1,6 +1,5 @@
 jQuery(document).ready(function($)
 {	
-
 	$('table.table').DataTable( {
          order: [[ 3, 'desc' ], [ 0, 'asc' ]]
     } );
@@ -17,7 +16,10 @@ jQuery(document).ready(function($)
     $('#save-task').click(function(e)
     {   
 		$('#save-task').addClass('disabled');
-        $.post('/wp-admin/admin-ajax.php?action=add_new_task', $('#task-form').serialize(), function(data)
+		
+		var url = ajaxurl + '?action=add_new_task'
+
+        $.post(url, $('#task-form').serialize(), function(data)
 		{
 			$('#save-task').removeClass('disabled');
 			alert("Success!")
